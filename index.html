@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form login</title>
+    <meta charset = "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="login">
+        <form action="" method="POST" id="form-login">
+            <h1 class="form-heading">KCSC TRANING</h1>
+
+            <div class="form-group ">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="user" class="form-input" placeholder="Tên đăng nhập">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" id="password" class="form-input" placeholder="Mật khẩu">
+                <span class="form-message"></span>
+            </div>
+
+            <input type="submit" value="ĐĂNG NHẬP" class="form-submit">
+    
+        </form>
+    </div>
+
+    <script src="./app.js"></script>
+    <script>
+        Validator({
+            form: '#form-login',
+            rules:[
+                Validator.Length('#user'),
+                Validator.Math('#password'),
+            ]
+        })
+        document.getElementById('form-login').addEventListener('submit', function(){
+        alert('Đã gửi thành công');
+    });
+    </script>
+</body>
+</html>
